@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/home_activity_Bonjour"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="175dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="103dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logoisen"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/textpicture1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/home_activity_picture1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttoncycle" />
+
+    <TextView
+        android:id="@+id/textpicture2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/home_activity_picture2"
+        app:layout_constraintStart_toEndOf="@+id/textpicture1"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsave" />
+
+    <TextView
+        android:id="@+id/textpicture3"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="68dp"
+        android:text="@string/home_activity_picture3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonpermissions"
+        app:layout_constraintVertical_bias="0.120000005" />
+
+    <TextView
+        android:id="@+id/textpicture4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="86dp"
+        android:text="@string/home_activity_picture4"
+        app:layout_constraintBottom_toTopOf="@+id/disconnexionbutton"
+        app:layout_constraintStart_toEndOf="@+id/textpicture3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonwebservice"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <ImageButton
+        android:id="@+id/buttonsave"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/buttoncycle"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <ImageButton
+        android:id="@+id/buttoncycle"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:srcCompat="@android:drawable/stat_notify_chat" />
+
+    <ImageButton
+        android:id="@+id/buttonpermissions"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="41dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textpicture1"
+        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
+
+    <ImageButton
+        android:id="@+id/buttonwebservice"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/buttonpermissions"
+        app:layout_constraintTop_toBottomOf="@+id/textpicture2"
+        app:srcCompat="@android:drawable/stat_sys_download_done" />
+
+    <Button
+        android:id="@+id/disconnexionbutton"
+        android:layout_width="109dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/disconnexionbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textSharedPref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/SharedPreferencesString"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

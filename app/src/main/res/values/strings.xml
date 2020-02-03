@@ -1,3 +1,49 @@
 <resources>
     <string name="app_name">AndroidToolBox</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- string of loginActivity -->
+    <string name="login_activity_text">Connexion</string>
+    <string name="login_activity_identifiant">Identifiant</string>
+    <string name="login_activity_password">Mot de passe</string>
+    <string name="home_activity_Bonjour">Bonjour</string>
+    <string name="validatebutton">Valider</string>
+    <string name="SharedPreferencesString"></string>
+
+    <!-- string of homeActivity -->
+    <string name="home_activity_picture1">Cycle de vie</string>
+    <string name="home_activity_picture2">Sauvegarde</string>
+    <string name="home_activity_picture3">Permissions</string>
+    <string name="home_activity_picture4">Webservices</string>
+    <string name="disconnexionbutton">Déconnexion</string>
+
+    <!-- string of LifeCycleActivity -->
+    <string name="changeFrag">Changer de Fragment</string>
+    <!-- string of FirstFrag -->
+    <string name="fragment1_text">Nous somme dans le 1er Fragment !</string>
+    <!-- string of SecondFrag -->
+    <string name="fragment2_text">Nous somme dans le 2eme Fragment !</string>
+
+    <!-- string of FormulaireActivity.xml -->
+    <string name="textIntroFormulaire">Bienvenu dans le Formulaire !</string>
+    <string name="buttonSaveForm">Sauvegarder</string>
+    <string name="SeeForm">Voir Json</string>
+    <string name="textFormNom">Entrez votre nom :</string>
+    <string name="textFormPrenom">Entrez votre prénom :</string>
+    <string name="textFormDateNaissance">Entrez votre date de naissance :</string>
+    <string name="collectBirthday">..............................................</string>
+    <!-- string of FormulaireActivity.kt -->
+    <string name="messageAlertDialogName">Votre Json file dit: \n Nom : </string>
+    <string name="messageAlertDialogFirstName">\nVotre Prenom : </string>
+    <string name="messageAlertDialogBirthday">\nVotre date de naissance : </string>
+
+    <!-- string of PermissionsActivity-->
+    <string name="text1permission">Accès aux informations Android</string>
+    <string name="textButtonPermission">Cliquer sur le bouton pour accéder à la galerie</string>
+    <string name="textPosition">Position du téléphone</string>
+
+    <!-- string of WebservicesActivity-->
+    <string name="textwebservices">Activité WebService</string>
+
 </resources>
