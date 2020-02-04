@@ -26,7 +26,7 @@
     <string name="fragment2_text">Nous somme dans le 2eme Fragment !</string>
 
     <!-- string of FormulaireActivity.xml -->
-    <string name="textIntroFormulaire">Bienvenu dans le Formulaire !</string>
+    <string name="textIntroFormulaire">Bienvenue dans le Formulaire !</string>
     <string name="buttonSaveForm">Sauvegarder</string>
     <string name="SeeForm">Voir Json</string>
     <string name="textFormNom">Entrez votre nom :</string>
