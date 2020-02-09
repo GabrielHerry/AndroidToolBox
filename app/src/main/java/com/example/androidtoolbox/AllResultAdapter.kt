@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.recycler_view_contact_cell.view.*
+import kotlinx.android.synthetic.main.recycler_view_user_cell.view.*
 
-class AllResultAdapter(val results: Array<User>): RecyclerView.Adapter<AllResultAdapter.UsersViewHolder>() {
+class AllResultAdapter(val results: Array<User>, val callBack: (User)-> Unit): RecyclerView.Adapter<AllResultAdapter.UsersViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_contact_cell, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_user_cell, parent, false)
         return UsersViewHolder(view, parent.context)
     }
 
@@ -22,11 +22,11 @@ class AllResultAdapter(val results: Array<User>): RecyclerView.Adapter<AllResult
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val user = results[position]
-        holder.bind(user)
+        holder.bind(user, callBack)
     }
 
     class UsersViewHolder(val view: View, val context: Context): RecyclerView.ViewHolder(view) {
-        fun bind(user: User) {
+        fun bind(user: User, callBack: (User)-> Unit)  {
 
             view.genderOfUser.text = user.gender
 
@@ -41,7 +41,11 @@ class AllResultAdapter(val results: Array<User>): RecyclerView.Adapter<AllResult
                 .load(user.picture?.large)
                 .into(view.pictureOfUser)
 
-            Log.i("URL picture", user.picture?.large)
+
+
+            view.setOnClickListener {
+                callBack.invoke(user)
+            }
         }
     }
 }

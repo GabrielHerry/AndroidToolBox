@@ -1,6 +1,7 @@
 
 package com.example.androidtoolbox
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -14,7 +15,7 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_webservices.*
 import org.json.JSONArray
 import org.json.JSONObject
-import kotlinx.android.synthetic.main.recycler_view_contact_cell.*
+import kotlinx.android.synthetic.main.recycler_view_user_cell.*
 
 class WebservicesActivity : AppCompatActivity() {
 
@@ -36,18 +37,36 @@ class WebservicesActivity : AppCompatActivity() {
         val stringReq =
             StringRequest(Request.Method.GET, url, Response.Listener<String> { response ->
 
-         /*          var strResp = response.toString()
-                  val jsonObj: JSONObject = JSONObject(strResp)
-                val jsonArray: JSONArray = jsonObj.getJSONArray("results")
-                var jsonInner: JSONObject = jsonArray.getJSONObject(0)
-                textwebservices.text = jsonInner.get("gender").toString()
-                   // textwebservices.text= result.results[0].gender
-                   */
 
                 var allResults: AllResults = Gson().fromJson(response, AllResults::class.java)
 
                 contactRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                contactRecyclerView.adapter = AllResultAdapter(allResults.results)
+                contactRecyclerView.adapter = AllResultAdapter(allResults.results) {
+                    val intent = Intent(this, ShowUserActivity::class.java)
+
+                    intent.putExtra("genderToShow", it.gender)
+
+                    intent.putExtra("nameTitleToShow", it.name?.title)
+                    intent.putExtra("nameFirstToShow", it.name?.first)
+                    intent.putExtra("nameLastToShow", it.name?.last)
+
+                    intent.putExtra("locationStreetIntToShow", it.location?.street?.number)
+                    intent.putExtra("locationStreetNameToShow", it.location?.street?.name)
+
+                    intent.putExtra("locationCityToShow", it.location?.city)
+                    intent.putExtra("locationStateToShow", it.location?.state)
+                    intent.putExtra("locationContryToShow", it.location?.contry)
+                    intent.putExtra("locationPostcodeToShow", it.location?.postcode)
+
+                    intent.putExtra("locationCoordinatesLatitudeToShow", it.location?.coordinates?.latitude)
+                    intent.putExtra("locationCoordinatesLongitudeToShow", it.location?.coordinates?.longitude)
+
+                    intent.putExtra("mailToShow", it.email)
+
+                    intent.putExtra("pictureToShow", it.picture?.large)
+
+                    startActivity(intent)
+                }
 
             },
                 Response.ErrorListener { textwebservices!!.text = "That didn't work!" })
@@ -60,45 +79,3 @@ class WebservicesActivity : AppCompatActivity() {
 
 
 }
-
-
-class AllResults (
-    var results: Array<User>
-)
-
-
-class User (
-    var gender: String? ,
-    var name: Name?,
-    var email: String?,
-    var picture: Picture?
-)
-
-class Name (
-    var title: String?,
-    var first: String?,
-    var last: String?
-)
-
-class Picture (
-    var large: String?
-)
-
-
-/*
-    val contactList = ArrayList<ContactModel>()
-    val contacts = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null)
- //   val contacts
-    while(contacts?.moveToNext() ?: false) {
-     //   val displayName = contacts?.getString(contacts.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
-        val contactModel = ContactModel()
-        contactModel.displayName = displayName.toString()
-        contactList.add(contactModel)
-    }
-    contactRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-    contactRecyclerView.adapter = ContactsAdapter(contactList)
-}
-
-*/
-
-
